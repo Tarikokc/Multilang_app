@@ -1,0 +1,37 @@
+/* Styles pour la page de détail de l'article */
+.article-detail {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.article-detail h1 {
+    font-size: 2rem; /* Titre plus grand */
+    margin-bottom: 1rem;
+}
+
+.article-detail .publication-date {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.article-detail img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+    border-radius: 5px; /* Coins arrondis pour l'image */
+}
+
+.article-detail p {
+    line-height: 1.7; /* Espacement des lignes plus aéré */
+    margin-bottom: 1.5rem;
+}
+
+.article-detail blockquote {
+    background-color: var(--secondary-color);
+    padding: 1rem;
+    border-left: 4px solid var(--accent-color);
+    margin: 2rem 0;
+}

@@ -1,0 +1,52 @@
+/* main/static/main/css/chatbot.css */
+
+/* Styles de base pour le chatbot */
+#chat-container {
+    position: fixed; /* Fixer la position en bas à droite */
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Masquer le débordement */
+}
+
+.hidden {
+    display: none; /* Masquer le conteneur du chatbot par défaut */
+}
+/* Style des messages */
+#chat-window {
+    padding: 10px;
+    height: 300px; /* Ajustez la hauteur selon vos besoins */
+    overflow-y: scroll; /* Ajouter une barre de défilement si nécessaire */
+}
+
+.user, .bot {
+    margin-bottom: 5px;
+}
+
+.user {
+    text-align: right;
+}
+/* Style du formulaire */
+#chat-form {
+    padding: 10px;
+    display: flex;
+}
+
+#user-input {
+    flex-grow: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+#chat-form button {
+    padding: 5px 10px;
+    background-color: #007bff; /* Bleu */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+

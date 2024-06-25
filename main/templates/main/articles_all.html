@@ -1,0 +1,55 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main/css/home.css' %}">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <title>{% trans "Articles de Blog" %}</title>
+    
+    
+</head>
+<body>
+    <header>
+        <h1>{% trans "Articles de Blog" %}</h1>
+
+        {% comment %} CHANGEMENT DE LANGUE  {% endcomment %}
+        <form action="{% url 'change_language' %}" method="get">
+            <select name="lang" onchange="this.form.submit()">
+                <option value="fr" {% if LANGUAGE_CODE == 'fr' %}selected{% endif %}>Français</option>
+                <option value="en" {% if LANGUAGE_CODE == 'en' %}selected{% endif %}>English</option>
+            </select>
+        </form>
+
+
+        
+
+
+         
+    </header>
+
+    {% comment %} PERMET L'AFFICHAGE DES ARTICLES  {% endcomment %}
+    <div class="container">  
+        <ul class="article-list">  
+            {% for article in articles %}
+                <li class="article-card">
+                    {% if article.image %}
+                        <img src="{{ article.image.url }}" alt="{{ article.title }}" style="max-width: 100%; height: auto;">
+                    {% endif %}
+                    <div class="content">
+                        <h2>{{ article.title }}</h2>  
+                        <p>{{ article.content|truncatewords:20 }}</p> 
+                        <a href="{% url 'article_detail' article.id %}">{% trans "Lire la suite" %}</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="container"> 
+    </div>
+
+
+    
+</body>
+</html>

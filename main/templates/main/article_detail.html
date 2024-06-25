@@ -1,0 +1,21 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ article.title }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main/css/article_detail.css' %}">
+</head>
+<body>
+    {% comment %} AFFICHAGE DU DETAIL D'UN ARTICLE {% endcomment %}
+    <div class="container">
+        <article class="article-detail">
+            <h1>{{ article.title }}</h1>
+            <p class="publication-date">{% trans "Publié le" %} {{ article.publication_date }}</p>
+            <img src="{{ article.image.url }}" alt="{{ article.title }}" style="max-width: 100%; height: auto;">
+            <p>{{ article.content }}</p>
+        </article>
+    </div>
+</body>
+</html>

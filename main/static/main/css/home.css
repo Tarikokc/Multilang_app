@@ -1,0 +1,156 @@
+/* main/static/main/css/home.css */
+
+:root {
+    --primary-color: #212529; /* Dark gray (almost black) */
+    --secondary-color: #f8f9fa; /* Light gray */
+    --accent-color: #007bff; /* Blue */
+    --text-color: #212529; /* Dark gray */
+    --link-color: #007bff; /* Blue */
+}
+
+body {
+    font-family: 'Roboto', sans-serif; 
+    line-height: 1.6;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    margin: 0;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Article Grid Layout */
+.article-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+    gap: 2rem;
+}
+
+.article-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden; /* To hide overflowing image content */
+}
+
+.article-card img {
+    width: 100%; /* Make image take full width of the card */
+    height: 200px; /* Set a fixed height for consistent card sizes */
+    object-fit: cover; /* Cover the container while maintaining aspect ratio */
+}
+
+.article-card .content { /* Add a container for text content */
+    padding: 1.5rem;
+}
+
+.article-card h2 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.article-card p {
+    color: var(--text-color);
+}
+
+.article-card a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.article-card a:hover {
+    text-decoration: underline;
+}
+
+/* Styles pour le chatbot */
+#chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+#chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--primary-color); /* Couleur primaire du thème */
+    color: white;
+}
+
+#close-chatbot-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+}
+
+#chat-window {
+    padding: 10px;
+    height: 300px; 
+    overflow-y: scroll;
+}
+
+.message {
+    margin-bottom: 10px;
+}
+
+.user .message-content {
+    background-color: #e9ecef; /* Gris clair */
+    color: #343a40; /* Gris foncé */
+    padding: 8px 12px;
+    border-radius: 15px;
+    margin-left: auto; /* Aligner à droite */
+    max-width: 75%;
+}
+
+.bot .message-content {
+    background-color: var(--accent-color); /* Bleu */
+    color: white;
+    padding: 8px 12px;
+    border-radius: 15px;
+    margin-right: auto; /* Aligner à gauche */
+    max-width: 75%;
+}
+
+#chat-form {
+    padding: 10px;
+    display: flex;
+}
+
+#user-input {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#chat-form button {
+    padding: 8px 15px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.hidden {
+    display: none;
+}
